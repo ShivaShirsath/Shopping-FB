@@ -31,7 +31,7 @@ form {
   font-size: 1.25vmin;
   padding-left: 3.75vmin;
   border: none;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+  box-shadow: 0 -.5vmin 0 rgba(0, 0, 0, .04), 0 .5vmin .5vmin rgba(0, 0, 0, .25);
 
   color: #757575;
   font-weight: 500;
@@ -40,11 +40,12 @@ form {
   background-color: white;
   background-repeat: no-repeat;
   background-position: 1.25vmin;
+  background-size: 2.25vmin;
   transform: scale(2);
 }
 
 #gbtn:hover {
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
+  box-shadow: 0 -.5vmin 0 rgba(0, 0, 0, .04), 0 1vmin 2vmin rgba(0, 0, 0, .25);
 }
 
 #gbtn:active {
@@ -54,15 +55,16 @@ form {
 #gbtn:focus {
   outline: none;
   box-shadow:
-    0 -1px 0 rgba(0, 0, 0, .04),
-    0 2px 4px rgba(0, 0, 0, .25),
-    0 0 0 3px #c8dafc;
+    0 -.5vmin 0 rgba(0, 0, 0, .04),
+    0 1vmin 2vmin rgba(0, 0, 0, .25),
+    0 0 0 1.5vmin #c8dafc;
 }
 
 #gbtn:disabled {
   filter: grayscale(100%);
   background-color: #ebebeb;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+  box-shadow: 0 -.5vmin 0 rgba(0, 0, 0, .04),
+    0 .5vmin .5vmin rgba(0, 0, 0, .25);
   cursor: not-allowed;
 }
 
