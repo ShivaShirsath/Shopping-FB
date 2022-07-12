@@ -1,14 +1,25 @@
-<html>
-  <head>
-    <title>Google Authentication </title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wecome Page</title>
+    <link rel="stylesheet" href="style.css" />
+    
+</head>
+<body>
+    <form>
+        <span id="user">Hello World !</span>
+        Welcome to login<br>You are successfully loged in!!!
+        <input type="button" onclick="logout()" value="LogOut">
+    </form>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
 
-  <body style="display:flex; align-items:center; justify-content:center;">
-    <a id='login'>
-      <img src="https://onymos.com/wp-content/uploads/2020/10/google-signin-button.png">
-    </a>
-  </body>
-
-  <script type="module" src="js/script.js"></script>
+    <script src="firebase.js"></script>
+    <script src="main.js"></script>
+</body>
 </html>
