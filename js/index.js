@@ -1,18 +1,57 @@
+document.getElementById("loginForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+});
+
 firebase.auth().onAuthStateChanged((user) => {
-  if (!user) {
+  if (user) {
     location.replace("../login.html");
-  } else {
-    document.getElementById("user").innerHTML =
-      "Hello " + (user.displayName ? user.displayName : user.email);
   }
 });
 
-function logout() {
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
   firebase
     .auth()
-    .signOut()
+    .signInWithEmailAndPassword(email, password)
+    .catch((error) => {
+      document.getElementById("error").innerHTML = error.message;
+    });
+}
+
+function signUp() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .catch((error) => {
+      document.getElementById("error").innerHTML = error.message;
+    });
+}
+
+function forgotPass() {
+  const email = document.getElementById("email").value;
+  firebase
+    .auth()
+    .sendPasswordResetEmail(email)
     .then(() => {
-      console.log("Sign-out successful");
+      alert("Reset link sent to your email id");
+    })
+    .catch((error) => {
+      document.getElementById("error").innerHTML = error.message;
+    });
+}
+
+function googleSignIn() {
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then((result) => {
+      var credential = result.credential;
+      var token = credential.accessToken;
+      var user = result.user;
+      console.log(user);
     })
     .catch((error) => {
       console.log(error);
