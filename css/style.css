@@ -8,15 +8,16 @@
   border-radius: 2.5vmin;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   touch-action: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 form {
   height: 100vh;
   width: 100vw;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+
   flex-direction: column;
 }
 
@@ -68,4 +69,11 @@ form {
 
 a {
   font-size: 2.5vmin;
+}
+
+
+#logout {
+  position: fixed;
+  right: 0;
+  top: 0;
 }
