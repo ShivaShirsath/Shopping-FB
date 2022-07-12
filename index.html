@@ -4,14 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wecome Page</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Auth Demo</title>
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <form>
-      <span id="user">Hello World !</span>
-      Welcome to login<br />You are successfully loged in!!!
-      <input type="button" onclick="logout()" value="LogOut" />
+    <form onsubmit="login()" id="loginForm">
+      <h3>Sign In</h3>
+      <span id="error"></span>
+      <input
+        id="email"
+        type="text"
+        class="input"
+        required
+        placeholder="Email Id"
+      />
+
+      <input
+        id="password"
+        type="password"
+        class="input"
+        required
+        placeholder="Password"
+      />
+
+      <a href="" onclick="forgotPass()">Forgot Password</a>
+      <span>
+        <input type="submit" value="Log In" />
+        <input type="submit" onclick="signUp()" value="Sign Up" />
+      </span>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="//fonts.googleapis.com/css?family=Open+Sans"
+      />
+
+      <a id="gbtn" onclick="googleSignIn()"> Sign in with Google </a>
     </form>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
@@ -19,6 +46,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
 
     <script src="firebase.js"></script>
-    <script src="index.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
