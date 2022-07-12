@@ -27,9 +27,9 @@ form {
 
 #gbtn {
   transition: background-color .3s, box-shadow .3s;
-  line-height: 1.25vmin;
-  font-size: 1.25vmin;
-  padding-left: 3.75vmin;
+  line-height: 7.5vmin;
+  font-size: 3.5vmin;
+  padding-left: 7vmin;
   border: none;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
 
@@ -40,8 +40,7 @@ form {
   background-color: white;
   background-repeat: no-repeat;
   background-position: 1.25vmin;
-  background-size: 2.25vmin;
-  transform: scale(2);
+  background-size: 5vmin;
 }
 
 #gbtn:hover {
