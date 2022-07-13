@@ -1,3 +1,9 @@
+document.addEventListener("visibilitychange", (e) => {
+  if (document.visibilityState === "visible") {
+    document.location.reload(true);
+  }
+});
+
 firebase.auth().onAuthStateChanged((user) => {
   if (!user) {
     location.replace("index.html");
