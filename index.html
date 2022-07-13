@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,16 +12,32 @@
     <form onsubmit="login()" id="loginForm">
       <h3>Sign In</h3>
       <span id="error"></span>
-      <input id="email" type="text" class="input" required placeholder="Email Id" />
+      <input
+        id="email"
+        type="text"
+        class="input"
+        required
+        placeholder="Email Id"
+      />
 
-      <input id="password" type="password" class="input" required placeholder="Password" />
+      <input
+        id="password"
+        type="password"
+        class="input"
+        required
+        placeholder="Password"
+      />
 
       <a href="" onclick="forgotPass()">Forgot Password</a>
       <span>
         <input type="submit" value="Log In" />
         <input type="submit" onclick="signUp()" value="Sign Up" />
       </span>
-      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="//fonts.googleapis.com/css?family=Open+Sans"
+      />
 
       <a id="gbtn" onclick="googleSignIn()"> Sign in with Google </a>
     </form>
@@ -34,5 +49,4 @@
     <script src="js/firebase.js"></script>
     <script src="js/index.js"></script>
   </body>
-
 </html>

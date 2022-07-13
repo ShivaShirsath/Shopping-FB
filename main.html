@@ -12,43 +12,49 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    
-
   </head>
 
   <body onload="eruda.init(); eruda.show();">
     <h1 id="user"></h1>
-    
-    <input id="id" placeholder="ID" type="number">
-      <input id="name" placeholder="Name" type="text" ><span>
-    <input type="button"
-      onclick='
-      var id = document.getElementById("id");
-      var name = document.getElementById("name");  
 
-      var userId = firebase.auth().currentUser.uid;
-      
-      firebase.database().ref("products/" + userId)
-      .set({
-      id: id.value,
-      name: name.value,
-      });
-      alert("Data Saved");   ' value="up">
-        <input type="button"
-          onclick="
+    <input id="id" placeholder="ID" type="number" />
+    <input id="name" placeholder="Name" type="text" /><span>
+      <input
+        value="up"
+        type="button"
+        onclick="
           var id = document.getElementById('id');
           var name = document.getElementById('name');  
-
-        var userId = firebase.auth().currentUser.uid;
-        var dataref = firebase.database().ref('products/' + userId);
+          var userId = firebase.auth().currentUser.uid;
+          
+          firebase
+          .database()
+          .ref('products/' + userId)
+          .set({
+            id: id.value,
+            name: name.value,
+          });
+          alert('Data Saved');
+        "
+      />
+      <input
+        value="dn"
+        type="button"
+        onclick="
+          var id = document.getElementById('id');
+          var name = document.getElementById('name');
+          var userId = firebase.auth().currentUser.uid;
+          var dataref = firebase.database().ref('products/' + userId);
           dataref.on('value', (snapshot) => {
-          const data = snapshot.val();
-          alert('Data : id is '+ data.id + ' & Name is ' + data.name);
-          });" value="dn"></span>
+            const data = snapshot.val();
+            alert('Data : id is '+ data.id + ' & Name is ' + data.name);
+          });
+        "
+      />
+    </span>
     <input id="logout" type="button" onclick="logout()" value="⎋" />
 
     <script src="js/firebase.js"></script>
-    <script src="js/main.js" ></script>
-    <script src="js/database.js" ></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
